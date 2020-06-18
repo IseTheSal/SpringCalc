@@ -26,12 +26,10 @@ public class Action {
     public void calc() {
         boolean fg = true;
         while (fg) {
-            writer.WriteStr("Выберите операцию");
+            writer.WriteStr("(Config)Выберите операцию");
             int choice = (int) reader.readNum();
-
             switch (choice) {
                 case 1:
-
                     writer.WriteStr("Введите операцию");
                     String op = reader.readOp();
                     writer.WriteStr("Введите число");
@@ -49,8 +47,6 @@ public class Action {
                     fg = false;
                     break;
             }
-
         }
-
     }
 }
