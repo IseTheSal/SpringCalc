@@ -23,8 +23,13 @@ public class Config {
     }
 
     @Bean
-    public Action action(Writer writer, Reader reader, Calculator calculator) {
-        return new Action(writer, reader, calculator);
+    public History history() {
+        return new History();
+    }
+
+    @Bean
+    public Action action(Writer writer, Reader reader, Calculator calculator, History history) {
+        return new Action(writer, reader, calculator, history);
     }
 
 }
