@@ -1,11 +1,9 @@
-package Config;
+package Config.action;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
-
-import java.util.ArrayList;
-import java.util.Scanner;
+import Config.console.Writer;
+import Config.console.Reader;
+import Config.service.Calculator;
+import Config.service.History;
 
 
 public class Action {
@@ -26,7 +24,7 @@ public class Action {
     public void calc() {
         boolean fg = true;
         while (fg) {
-            writer.WriteStr("(Config)Выберите операцию");
+            writer.WriteStr("(Config)Выберите операцию\n1. Калькулятор\n2. История\n3. Выход");
             int choice = (int) reader.readNum();
             switch (choice) {
                 case 1:
@@ -36,9 +34,13 @@ public class Action {
                     double num1 = reader.readNum();
                     writer.WriteStr("Введите число");
                     double num2 = reader.readNum();
-                    double res = this.calculator.calculator(num1, num2, op);
-                    history.addToHistory(num1, op, num2, res);
-                    writer.WriteDouble(res);
+                    try {
+                        double res = this.calculator.calculator(num1, num2, op);
+                        history.addToHistory(num1, op, num2, res);
+                        writer.WriteDouble(res);
+                    } catch (IllegalArgumentException ex) {
+                        writer.WriteStr("Illegal Operation");
+                    }
                     break;
                 case 2:
                     history.showHistory();

@@ -1,4 +1,4 @@
-package Config;
+package Config.console;
 
 import org.springframework.stereotype.Component;
 

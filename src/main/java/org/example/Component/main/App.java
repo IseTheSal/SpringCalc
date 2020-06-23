@@ -1,5 +1,6 @@
-package org.example.Component;
+package org.example.Component.main;
 
+import org.example.Component.action.Action;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

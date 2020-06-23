@@ -1,6 +1,9 @@
-package Config;
-
-
+package Config.config;
+import Config.console.Writer;
+import Config.console.Reader;
+import Config.service.Calculator;
+import Config.service.History;
+import Config.action.Action;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

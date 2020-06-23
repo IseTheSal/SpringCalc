@@ -1,4 +1,4 @@
-package Config;
+package Config.service;
 
 import java.util.ArrayList;
 import java.util.Collections;

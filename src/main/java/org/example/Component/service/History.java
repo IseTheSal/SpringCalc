@@ -1,4 +1,4 @@
-package org.example.Component;
+package org.example.Component.service;
 
 import org.springframework.stereotype.Component;
 
@@ -9,7 +9,7 @@ public class History {
 
     public ArrayList<String> list = new ArrayList<>();
 
-    void addToHistory(double num1, String op, double num2, double res) {
+    public void addToHistory(double num1, String op, double num2, double res) {
         switch (op){
             case "plus":
                 list.add(num1 + " + " + num2 + " = " + res);
